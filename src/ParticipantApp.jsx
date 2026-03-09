@@ -361,9 +361,8 @@ function Welcome({ onNext, onSkip }) {
    CHAPTER PAGE  (video FIRST, then text)
 ═══════════════════════════════════════ */
 function ChapterPage({ chapter, dotsCurrent, title, te, body, videoLabel, onNext, onBack, completedPages, onNavigate }) {
-  const [agreed, setAgreed] = useState(false);
   const [v, setV] = useState(false);
-  useEffect(() => { setAgreed(false); setTimeout(() => setV(true), 80); }, [chapter]);
+  useEffect(() => { setTimeout(() => setV(true), 80); }, [chapter]);
 
   const themes = [
     { accent: b.teal,   gradient: `linear-gradient(135deg, ${b.purpleDark}, ${b.purple})`,  pageBg: b.offwhite },
@@ -407,23 +406,19 @@ function ChapterPage({ chapter, dotsCurrent, title, te, body, videoLabel, onNext
           {body}
         </p>
 
-        {/* 3. AGREEMENT */}
-        <AgreementBox checked={agreed} onChange={setAgreed} accent={theme.accent}
-          label="I have watched the video content for this chapter and understand the information presented." />
-
-        {/* 4. NAV */}
+        {/* 3. NAV */}
         <div style={{ display: "flex", justifyContent: "space-between", marginTop: 32, gap: 16, flexWrap: "wrap" }}>
           <button onClick={onBack} style={{ background: "transparent", border: `2px solid ${b.border}`, color: b.stone, fontFamily: "Georgia, serif", padding: "12px 28px", cursor: "pointer", borderRadius: 6, fontSize: "0.9rem", transition: "all 0.2s" }}
             onMouseEnter={e => e.currentTarget.style.borderColor = b.stone}
             onMouseLeave={e => e.currentTarget.style.borderColor = b.border}>
             ← Back
           </button>
-          <button onClick={agreed ? onNext : null} style={{
-            background: agreed ? theme.accent : "#ccc", border: "none", color: b.white,
+          <button onClick={onNext} style={{
+            background: theme.accent, border: "none", color: b.white,
             fontFamily: "'Arial Black', sans-serif", fontSize: "0.78rem", letterSpacing: 2,
-            padding: "14px 40px", cursor: agreed ? "pointer" : "not-allowed",
+            padding: "14px 40px", cursor: "pointer",
             borderRadius: 6, textTransform: "uppercase", transition: "all 0.25s",
-            opacity: agreed ? 1 : 0.5, boxShadow: agreed ? `0 4px 20px ${theme.accent}44` : "none",
+            boxShadow: `0 4px 20px ${theme.accent}44`,
           }}>
             {chapter < 3 ? "Continue →" : "Final Chapter →"}
           </button>
@@ -828,7 +823,7 @@ export default function App() {
 
   return (
     <div>
-
+      <style>{`* { box-sizing: border-box; margin: 0; padding: 0; } body { -webkit-font-smoothing: antialiased; } button { font-family: inherit; } textarea, input { font-family: inherit; }`}</style>
 
       {/* Page info banner for brochure chapters */}
       {!isPortalSection && page > 0 && page <= 3 && (
