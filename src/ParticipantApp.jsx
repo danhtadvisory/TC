@@ -832,12 +832,11 @@ function PortalWelcome({ onNext, onSkip }) {
   const [v, setV] = useState(false);
   useEffect(() => { setTimeout(() => setV(true), 80); }, []);
   return (
-    <div style={{ minHeight: "100vh", background: `linear-gradient(150deg, ${b.ink} 0%, #2a1545 50%, #0d2e2a 100%)`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", padding: "60px 24px 40px" }}>
+    <div style={{ minHeight: "100vh", background: `linear-gradient(150deg, ${b.ink} 0%, #2a1545 50%, #0d2e2a 100%)`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", padding: "100px 24px 40px" }}>
       <svg style={{ position: "absolute", top: -40, right: -60, opacity: 0.06, pointerEvents: "none" }} width="500" height="400" viewBox="0 0 500 400" fill="none">
         <polygon points="0,150 200,30 400,150 360,150 200,60 40,150" fill={b.teal} />
         <polygon points="100,290 300,170 500,290 460,290 300,200 140,290" fill={b.purple} />
       </svg>
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0 }}><RainbowBar /></div>
       <div style={{ maxWidth: 680, textAlign: "center", zIndex: 1, opacity: v ? 1 : 0, transform: v ? "none" : "translateY(32px)", transition: "all 0.9s ease" }}>
         <div style={{ marginBottom: 32 }}><LogoFull size={110} /></div>
         <p style={{ fontFamily: "Georgia, serif", color: b.teal, fontSize: 12, letterSpacing: 5, textTransform: "uppercase", marginBottom: 20 }}>He mihi maioha</p>
@@ -873,8 +872,7 @@ function ChapterPage({ chapter, title, te, body, videoLabel, onNext, onBack, com
   const theme = themes[chapter - 1];
   return (
     <div style={{ minHeight: "100vh", background: theme.pageBg, display: "flex", flexDirection: "column" }}>
-      <div style={{ background: theme.gradient, padding: "56px 24px 60px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0 }}><RainbowBar /></div>
+      <div style={{ background: theme.gradient, padding: "100px 24px 60px", position: "relative", overflow: "hidden" }}>
         <svg style={{ position: "absolute", right: -40, top: -20, opacity: 0.07, pointerEvents: "none" }} width="320" height="220" viewBox="0 0 320 220" fill="none">
           <polygon points="0,90 130,22 260,90 228,90 130,40 32,90" fill="white" />
           <polygon points="0,130 130,62 260,130 228,130 130,80 32,130" fill="white" />
@@ -899,7 +897,7 @@ function ChapterPage({ chapter, title, te, body, videoLabel, onNext, onBack, com
           </button>
         </div>
       </div>
-      <SiteFooter setView={() => {}} />
+
     </div>
   );
 }
@@ -910,8 +908,7 @@ function FinalChapter({ onComplete, onBack, completedPages, onNavigate }) {
   useEffect(() => { setTimeout(() => setV(true), 80); }, []);
   return (
     <div style={{ minHeight: "100vh", background: b.offwhite, display: "flex", flexDirection: "column" }}>
-      <div style={{ background: `linear-gradient(135deg, ${b.ink}, #2a1545)`, padding: "56px 24px 60px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0 }}><RainbowBar /></div>
+      <div style={{ background: `linear-gradient(135deg, ${b.ink}, #2a1545)`, padding: "100px 24px 60px", position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
           <PortalDots current={2} total={3} completedPages={completedPages} onNavigate={onNavigate} />
           <p style={{ color: "rgba(255,255,255,0.5)", fontFamily: "Georgia, serif", letterSpacing: 3, fontSize: 11, textTransform: "uppercase", marginBottom: 10 }}>Chapter 3 of 3 · Final</p>
@@ -940,7 +937,7 @@ function FinalChapter({ onComplete, onBack, completedPages, onNavigate }) {
           </button>
         </div>
       </div>
-      <SiteFooter setView={() => {}} />
+
     </div>
   );
 }
@@ -953,7 +950,7 @@ function PortalSignIn({ onEnter }) {
   const canEnter = name.trim().length > 1;
   const inp = { width: "100%", padding: "14px 18px", fontFamily: "Georgia, serif", fontSize: "1rem", color: b.ink, background: b.warm, border: `2px solid ${b.border}`, borderRadius: 8, outline: "none", transition: "border-color 0.2s" };
   return (
-    <div style={{ minHeight: "100vh", background: `linear-gradient(150deg, #f7f0ff, ${b.offwhite} 50%, #e8faf8)`, display: "flex", alignItems: "center", justifyContent: "center", padding: "40px 24px" }}>
+    <div style={{ minHeight: "100vh", background: `linear-gradient(150deg, #f7f0ff, ${b.offwhite} 50%, #e8faf8)`, display: "flex", alignItems: "center", justifyContent: "center", padding: "107px 24px 40px" }}>
       <div style={{ maxWidth: 460, width: "100%", opacity: v ? 1 : 0, transform: v ? "none" : "translateY(24px)", transition: "all 0.8s" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <LogoFull size={90} />
@@ -1046,13 +1043,9 @@ function Dashboard({ participant, entries, onSave, onRestart }) {
 
   return (
     <div style={{ minHeight: "100vh", background: `linear-gradient(160deg, #f4f0fa 0%, ${b.offwhite} 50%, #eaf8f6 100%)` }}>
-      <div style={{ background: `linear-gradient(135deg, ${b.ink}, #2a1545)`, padding: "0 24px" }}>
-        <RainbowBar />
-        <div style={{ maxWidth: 820, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap", padding: "18px 0" }}>
-          <div>
-            <LogoInline height={32} />
-            <p style={{ fontFamily: "Georgia, serif", color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", marginTop: 4 }}>Kia ora, {participant.name} — Session entry</p>
-          </div>
+      <div style={{ background: `linear-gradient(135deg, ${b.ink}, #2a1545)`, padding: "0 24px", marginTop: 67 }}>
+        <div style={{ maxWidth: 820, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap", padding: "16px 0" }}>
+          <p style={{ fontFamily: "Georgia, serif", color: "rgba(255,255,255,0.6)", fontSize: "0.88rem" }}>Kia ora, <strong style={{ color: b.white }}>{participant.name}</strong> — Session entry</p>
           <div style={{ background: "rgba(255,255,255,0.07)", borderRadius: 8, padding: "8px 16px", textAlign: "right" }}>
             <p style={{ fontFamily: "'Arial Black', sans-serif", color: b.teal, fontSize: "0.65rem", letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>Today</p>
             <p style={{ fontFamily: "Georgia, serif", color: "rgba(255,255,255,0.65)", fontSize: "0.82rem" }}>{new Date().toLocaleDateString("en-NZ", { day: "numeric", month: "long", year: "numeric" })}</p>
@@ -1179,7 +1172,7 @@ function SubmitSuccess({ participant, avgScore, fileCount, entries, onRestart })
   useEffect(() => { setTimeout(() => setV(true), 80); }, []);
   const s = avgScore >= 4 ? { emoji: "✨", msg: "You seem to be in a good space today." } : avgScore >= 3 ? { emoji: "🍃", msg: "A steady day — every session matters." } : { emoji: "🌱", msg: "Thank you for showing up, even on harder days." };
   return (
-    <div style={{ minHeight: "100vh", background: `linear-gradient(150deg, #f4f0fa, ${b.offwhite} 60%, #e8faf8)`, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+    <div style={{ minHeight: "100vh", background: `linear-gradient(150deg, #f4f0fa, ${b.offwhite} 60%, #e8faf8)`, display: "flex", alignItems: "center", justifyContent: "center", padding: "107px 24px 40px" }}>
       <div style={{ maxWidth: 520, width: "100%", textAlign: "center", opacity: v ? 1 : 0, transform: v ? "none" : "translateY(24px)", transition: "all 0.8s" }}>
         <div style={{ marginBottom: 20 }}><LogoFull size={80} /></div>
         <div style={{ fontSize: "3.5rem", marginBottom: 16 }}>{s.emoji}</div>
@@ -1249,9 +1242,7 @@ export default function App() {
   return (
     <div>
       {/* Site nav — hidden inside dashboard */}
-      {!(isPortal && portalPage >= 5) && (
-        <SiteNav currentView={isPortal ? "portal" : view} setView={setView2} onPortal={goPortalSignIn} />
-      )}
+      <SiteNav currentView={isPortal ? "portal" : view} setView={setView2} onPortal={goPortalSignIn} />
 
       {/* ── MAIN SITE PAGES ── */}
       {view === "home"    && <LandingPage setView={setView2} onPortal={goPortalSignIn} />}
