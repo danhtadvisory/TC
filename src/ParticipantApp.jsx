@@ -532,17 +532,6 @@ function LandingPage({ setView, onPortal }) {
             </div>
           </div>
 
-          {/* Questions / contact */}
-          <div style={{ background: b.white, borderRadius: 12, padding: "22px 28px", border: `1px solid ${b.border}`, display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
-            <span style={{ fontSize: "1.4rem", flexShrink: 0 }}>💬</span>
-            <div>
-              <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.82rem", color: b.ink, marginBottom: 6 }}>Have questions before you sign up?</p>
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: b.stone, lineHeight: 1.7 }}>
-                You can email the research team at any time — <a href="mailto:t.clark@auckland.ac.nz" style={{ color: b.teal, textDecoration: "none" }}>t.clark@auckland.ac.nz</a> — or visit <a href="https://www.ngapiki.co.nz" target="_blank" rel="noopener noreferrer" style={{ color: b.teal, textDecoration: "none" }}>www.ngapiki.co.nz</a>. There's no pressure — participation is completely voluntary and you can withdraw at any time.
-              </p>
-            </div>
-          </div>
-
           {/* Ethics notice */}
           <p style={{ fontFamily: "Georgia, serif", fontSize: "0.72rem", color: b.stone, textAlign: "center", marginTop: 24, lineHeight: 1.7, opacity: 0.7 }}>
             Approved by the University of Auckland Human Participants Ethics Committee. Principal Investigator: Professor Terryann Clark, School of Nursing. Funded by Cure Kids. For ethical concerns contact <a href="mailto:humanethics@auckland.ac.nz" style={{ color: b.stone }}>humanethics@auckland.ac.nz</a>
