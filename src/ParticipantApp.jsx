@@ -300,13 +300,8 @@ function LandingPage({ setView, onPortal }) {
           <p style={{ fontFamily: "Georgia, serif", color: b.teal, fontSize: 12, letterSpacing: 5, textTransform: "uppercase", marginBottom: 20 }}>He mihi maioha</p>
           <div style={{ width: 56, height: 3, background: `linear-gradient(90deg, ${b.red}, ${b.teal})`, margin: "0 auto 28px", borderRadius: 2 }} />
           <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.3rem,3vw,1.8rem)", color: "rgba(255,255,255,0.8)", lineHeight: 1.8, marginBottom: 48, fontWeight: 400, maxWidth: 560, margin: "0 auto 48px" }}>
-            A guided journey through art, wellbeing, and understanding — exploring the connection between creative practice and mental health.
+            Our experiences, ideas, and stories can help shape resources that feel real, relevant, and useful for rangatahi across Aotearoa. Your voice matters. Help shape what's next.
           </h1>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Btn onClick={() => setView("about")} variant="secondary" style={{ color: "rgba(255,255,255,0.7)", borderColor: "rgba(255,255,255,0.3)", fontSize: "0.82rem", padding: "16px 36px" }}>
-              Learn More
-            </Btn>
-          </div>
         </div>
       </div>
 
