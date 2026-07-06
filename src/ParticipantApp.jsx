@@ -339,8 +339,8 @@ function LandingPage({ setView, onPortal }) {
         </svg>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 52 }}>
-            <SectionLabel color="rgba(255,255,255,0.5)">Mātakitaki mai</SectionLabel>
-            <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.4rem)", color: b.white, fontWeight: 900, marginBottom: 16 }}>Watch & Learn</h2>
+            <SectionLabel color="rgba(255,255,255,0.5)">Whakaae i runga i te mārama</SectionLabel>
+            <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.4rem)", color: b.white, fontWeight: 900, marginBottom: 16 }}>Informed Consent</h2>
             <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.8, maxWidth: 520, margin: "0 auto" }}>
               Before you begin, take a few minutes to watch these short videos. They'll walk you through what to expect and how to get the most from your experience.
             </p>
