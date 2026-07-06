@@ -317,6 +317,32 @@ function LandingPage({ setView, onPortal }) {
         </div>
       </div>
 
+      {/* ── WHO ARE WE ── */}
+      <div style={{ background: b.warm, padding: "80px 24px" }}>
+        <div style={{ maxWidth: 860, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr", gap: isMobile ? 32 : 60, alignItems: "start" }}>
+            <div>
+              <SectionLabel color={b.purple}>Ko wai mātou</SectionLabel>
+              <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.2rem)", color: b.ink, fontWeight: 900, lineHeight: 1.1, marginBottom: 16 }}>Who Are We</h2>
+              <Divider />
+              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 8 }}>
+                {["Kaupapa Māori", "University of Auckland", "Rangatahi Māori"].map(tag => (
+                  <span key={tag} style={{ fontFamily: "Georgia, serif", fontSize: "0.75rem", color: b.purple, background: b.purplePale, padding: "4px 12px", borderRadius: 20, border: `1px solid ${b.purple}25` }}>{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "#3a3040", lineHeight: 1.9, marginBottom: 20 }}>
+                We are a small research team from Te Whare Wānanga o Tāmaki Makaurau — The University of Auckland. Most of us whakapapa Māori. All of us are committed to doing research that improves the lives of rangatahi Māori. Our team includes experienced Kaupapa Māori researchers, as well as creative and technical experts.
+              </p>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "#3a3040", lineHeight: 1.9 }}>
+                With this study we are seeking to learn more about how rangatahi keep well emotionally — what keeps you strong and connected during the ups and downs of life. We will do this through a spoken word poetry wānanga. We hope this creativity will help you share your insights in ways that are fun and interesting. These insights will help us design programmes and interventions that rangatahi Māori find helpful and that they actually want to do.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ── UPLOADING ARTWORK ── */}
       <div style={{ background: b.offwhite, padding: "80px 24px" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
