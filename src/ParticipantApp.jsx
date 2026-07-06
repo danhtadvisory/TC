@@ -274,13 +274,6 @@ function LandingPage({ setView, onPortal }) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const uploadTips = [
-    { icon: "📸", title: "Photos work well",   body: "A photo of your artwork taken with your phone is perfect — it doesn't need to be professional." },
-    { icon: "📄", title: "PDFs accepted",       body: "If you're working digitally or scanning, PDF format is also accepted alongside JPG, PNG and GIF." },
-    { icon: "🔒", title: "Your files are safe", body: "Artwork is stored securely and only accessible to the research team. It will not be shared publicly without your explicit consent." },
-    { icon: "🖼️", title: "Anything counts",    body: "Sketches, finished pieces, works in progress — whatever you made this session is worth capturing." },
-  ];
-
   const nzSupport = [
     { name: "Lifeline", number: "0800 543 354", desc: "24/7 crisis support" },
     { name: "Youthline", number: "0800 376 633", desc: "For young people under 25" },
@@ -385,51 +378,6 @@ function LandingPage({ setView, onPortal }) {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── UPLOADING ARTWORK ── */}
-      <div style={{ background: b.offwhite, padding: "80px 24px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 36 : 60, alignItems: "center" }}>
-            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 12 : 16, order: isMobile ? 2 : 0 }}>
-              {uploadTips.map(tip => (
-                <div key={tip.title} style={{
-                  background: b.white, borderRadius: 12,
-                  padding: isMobile ? "18px 20px" : "22px 18px",
-                  border: `1px solid ${b.border}`,
-                  borderLeft: isMobile ? `4px solid ${b.teal}` : `1px solid ${b.border}`,
-                  borderTop: isMobile ? `1px solid ${b.border}` : `3px solid ${b.teal}`,
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
-                  display: isMobile ? "flex" : "block",
-                  alignItems: isMobile ? "flex-start" : "unset",
-                  gap: isMobile ? 16 : 0,
-                }}>
-                  <div style={{ fontSize: isMobile ? "1.8rem" : "1.6rem", marginBottom: isMobile ? 0 : 10, flexShrink: 0 }}>{tip.icon}</div>
-                  <div>
-                    <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.82rem", color: b.tealDark, marginBottom: 6 }}>{tip.title}</p>
-                    <p style={{ fontFamily: "Georgia, serif", fontSize: "0.85rem", color: b.stone, lineHeight: 1.7 }}>{tip.body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ order: isMobile ? 1 : 0 }}>
-              <SectionLabel color={b.teal}>Sharing Your Work</SectionLabel>
-              <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.2rem)", color: b.ink, fontWeight: 900, marginBottom: 16, lineHeight: 1.1 }}>Uploading Your Artwork</h2>
-              <Divider />
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#3a3040", lineHeight: 1.85, marginBottom: 20 }}>
-                At the end of each session you're invited to upload a photo or scan of what you made. This doesn't need to be perfect — a phone photo is completely fine.
-              </p>
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#3a3040", lineHeight: 1.85, marginBottom: 28 }}>
-                Your artwork is an important part of the research. It helps the team understand how your creative practice evolves alongside your wellbeing over the course of the programme.
-              </p>
-              <div style={{ padding: "16px 20px", background: b.tealPale, borderRadius: 10, border: `2px solid ${b.teal}30` }}>
-                <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: b.tealDark, lineHeight: 1.7 }}>
-                  🔒 <strong>Privacy:</strong> All uploads are stored securely. Your artwork will never be shared publicly without your explicit written consent.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
