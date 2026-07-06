@@ -530,8 +530,14 @@ function AboutPage({ setView, onPortal = () => {} }) {
 ═══════════════════════════════════════════════════════ */
 function ContactPage({ setView, onPortal = () => {} }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
   const inp = { width: "100%", padding: "13px 16px", fontFamily: "Georgia, serif", fontSize: "0.95rem", color: b.ink, background: b.warm, border: `2px solid ${b.border}`, borderRadius: 8, outline: "none", transition: "border-color 0.2s", marginTop: 8 };
+
+  const handleSend = () => {
+    if (form.name && form.email && form.message) {
+      const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+      window.location.href = `mailto:n.harrison@auckland.ac.nz?subject=Nga%20Piki%20Question&body=${body}`;
+    }
+  };
 
   return (
     <div style={{ paddingTop: 67 }}>
@@ -545,57 +551,32 @@ function ContactPage({ setView, onPortal = () => {} }) {
       <Wave color={b.offwhite} />
 
       <div style={{ background: b.offwhite, padding: "0 24px 80px" }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "start" }}>
-          <div>
-            <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1.2rem", color: b.ink, marginBottom: 16 }}>We'd love to hear from you</h2>
-            <p style={{ fontFamily: "Georgia, serif", fontSize: "0.95rem", color: "#3a3040", lineHeight: 1.85, marginBottom: 28 }}>
-              Whether you have questions about the programme, want to find out about taking part, or need to reach your facilitator, use the form here and we'll get back to you within two business days.
-            </p>
-            <Divider />
-            <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-              {[["📧", "Email", "info@ngapiki.nz"], ["📍", "Location", "Aotearoa New Zealand"], ["⏱", "Response time", "Within 2 business days"]].map(([icon, lbl, val]) => (
-                <div key={lbl} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-                  <span style={{ fontSize: "1.2rem" }}>{icon}</span>
-                  <div>
-                    <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", color: b.stone, letterSpacing: 1, textTransform: "uppercase", marginBottom: 3 }}>{lbl}</p>
-                    <p style={{ fontFamily: "Georgia, serif", fontSize: "0.9rem", color: b.ink }}>{val}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
+        <div style={{ maxWidth: 560, margin: "0 auto" }}>
           <div style={{ background: b.white, borderRadius: 16, padding: "36px 32px", border: `1px solid ${b.border}`, boxShadow: "0 4px 24px rgba(0,0,0,0.05)" }}>
-            {sent ? (
-              <div style={{ textAlign: "center", padding: "20px 0" }}>
-                <div style={{ fontSize: "3rem", marginBottom: 16 }}>✅</div>
-                <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1.1rem", color: b.ink, marginBottom: 12 }}>Message sent!</h3>
-                <p style={{ fontFamily: "Georgia, serif", color: b.stone, fontSize: "0.9rem", lineHeight: 1.7 }}>We'll get back to you within two business days. Ngā mihi.</p>
+            <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1.1rem", color: b.ink, marginBottom: 8 }}>We'd love to hear from you</h2>
+            <p style={{ fontFamily: "Georgia, serif", fontSize: "0.9rem", color: b.stone, lineHeight: 1.75, marginBottom: 28 }}>
+              Have a question about the study? Get in touch and we'll get back to you.
+            </p>
+            {[["name","Your Name","text"],["email","Email Address","email"]].map(([key, ph, type]) => (
+              <div key={key} style={{ marginBottom: 18 }}>
+                <label style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.68rem", letterSpacing: 1.5, textTransform: "uppercase", color: b.stone }}>
+                  {ph}
+                  <input type={type} value={form[key]} onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))} placeholder={ph} style={inp}
+                    onFocus={e => e.target.style.borderColor = b.teal} onBlur={e => e.target.style.borderColor = b.border} />
+                </label>
               </div>
-            ) : (
-              <>
-                {[["name","Your Name","text"],["email","Email Address","email"]].map(([key, ph, type]) => (
-                  <div key={key} style={{ marginBottom: 18 }}>
-                    <label style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.68rem", letterSpacing: 1.5, textTransform: "uppercase", color: b.stone }}>
-                      {ph}
-                      <input type={type} value={form[key]} onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))} placeholder={ph} style={inp}
-                        onFocus={e => e.target.style.borderColor = b.teal} onBlur={e => e.target.style.borderColor = b.border} />
-                    </label>
-                  </div>
-                ))}
-                <div style={{ marginBottom: 24 }}>
-                  <label style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.68rem", letterSpacing: 1.5, textTransform: "uppercase", color: b.stone }}>
-                    Message
-                    <textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} placeholder="How can we help?" rows={5}
-                      style={{ ...inp, resize: "vertical" }}
-                      onFocus={e => e.target.style.borderColor = b.teal} onBlur={e => e.target.style.borderColor = b.border} />
-                  </label>
-                </div>
-                <Btn onClick={() => { if (form.name && form.email && form.message) setSent(true); }} variant="teal" style={{ width: "100%", justifyContent: "center" }}>
-                  Send Message
-                </Btn>
-              </>
-            )}
+            ))}
+            <div style={{ marginBottom: 28 }}>
+              <label style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.68rem", letterSpacing: 1.5, textTransform: "uppercase", color: b.stone }}>
+                Message
+                <textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} placeholder="How can we help?" rows={5}
+                  style={{ ...inp, resize: "vertical" }}
+                  onFocus={e => e.target.style.borderColor = b.teal} onBlur={e => e.target.style.borderColor = b.border} />
+              </label>
+            </div>
+            <Btn onClick={handleSend} variant="teal" style={{ width: "100%", justifyContent: "center", opacity: form.name && form.email && form.message ? 1 : 0.5 }}>
+              Send Message
+            </Btn>
           </div>
         </div>
       </div>
