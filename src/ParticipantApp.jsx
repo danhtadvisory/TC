@@ -294,27 +294,6 @@ function LandingPage({ setView, onPortal }) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const howItWorks = [
-    { num: "01", color: b.teal,   title: "Check In",       body: "Begin each session by rating how you feel across four dimensions using the Likert scale. It takes less than a minute and creates a picture of your wellbeing over time." },
-    { num: "02", color: b.purple, title: "Reflect",         body: "Write freely about your creative experience. What did you make? How did it feel? There are no right or wrong answers — this space is entirely your own." },
-    { num: "03", color: b.red,    title: "Share Your Work", body: "Upload a photo or scan of what you created. Your artwork is stored privately and used only as part of the research with your consent." },
-  ];
-
-  const likertSteps = [
-    { emoji: "😔", score: 1, label: "Very low",  desc: "Things feel really hard right now." },
-    { emoji: "😕", score: 2, label: "Low",        desc: "Struggling a bit today." },
-    { emoji: "😐", score: 3, label: "Neutral",    desc: "Getting through, not much either way." },
-    { emoji: "🙂", score: 4, label: "Good",       desc: "Feeling reasonably positive." },
-    { emoji: "😊", score: 5, label: "Very good",  desc: "Feeling great today." },
-  ];
-
-  const reflectionTips = [
-    { icon: "✍️", title: "Write freely",       body: "Don't edit yourself. Your journal is private — no one will judge how you write or what you say." },
-    { icon: "🎯", title: "Use the prompts",    body: "If you're unsure where to start, the prompt buttons in the journal tab will help you get going." },
-    { icon: "🕐", title: "Even five minutes",  body: "A short reflection is better than none. Even a few sentences captures something valuable." },
-    { icon: "🔁", title: "Notice patterns",    body: "Over time, your reflections will reveal things about your creative process you might not otherwise see." },
-  ];
-
   const uploadTips = [
     { icon: "📸", title: "Photos work well",   body: "A photo of your artwork taken with your phone is perfect — it doesn't need to be professional." },
     { icon: "📄", title: "PDFs accepted",       body: "If you're working digitally or scanning, PDF format is also accepted alongside JPG, PNG and GIF." },
@@ -351,111 +330,9 @@ function LandingPage({ setView, onPortal }) {
             A guided journey through art, wellbeing, and understanding — exploring the connection between creative practice and mental health.
           </h1>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Btn onClick={onPortal} variant="primary" style={{ fontSize: "0.82rem", padding: "16px 44px", boxShadow: `0 6px 28px ${b.red}55` }}>
-              Enter Participant Portal
-            </Btn>
             <Btn onClick={() => setView("about")} variant="secondary" style={{ color: "rgba(255,255,255,0.7)", borderColor: "rgba(255,255,255,0.3)", fontSize: "0.82rem", padding: "16px 36px" }}>
               Learn More
             </Btn>
-          </div>
-          <p style={{ marginTop: 24, color: "rgba(255,255,255,0.25)", fontSize: 12, fontFamily: "Georgia, serif", letterSpacing: 1 }}>3 chapters · Approx. 10 minutes to begin</p>
-        </div>
-      </div>
-
-      {/* Wave transition into How It Works */}
-      <div style={{ background: b.tealPale, marginTop: -2 }}><Wave color={b.tealPale} /></div>
-
-      {/* ── HOW IT WORKS ── */}
-      <div style={{ background: b.tealPale, padding: "20px 24px 80px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <SectionLabel>The Process</SectionLabel>
-            <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.4rem)", color: b.ink, fontWeight: 900, marginBottom: 16 }}>How It Works</h2>
-            <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: b.stone, lineHeight: 1.8, maxWidth: 540, margin: "0 auto" }}>
-              Each session has three simple parts. Together they build a picture of your creative journey and wellbeing over time.
-            </p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px,1fr))", gap: 24 }}>
-            {howItWorks.map(s => (
-              <div key={s.num} style={{ background: b.white, borderRadius: 16, padding: "36px 28px", border: `1px solid ${b.border}`, borderTop: `4px solid ${s.color}`, boxShadow: "0 4px 20px rgba(0,0,0,0.04)" }}>
-                <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 36, height: 36, borderRadius: "50%", background: s.color, marginBottom: 16 }}>
-                  <span style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.78rem", color: "#ffffff", lineHeight: 1, fontWeight: 900 }}>{s.num}</span>
-                </div>
-                <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1.1rem", color: b.ink, marginBottom: 12 }}>{s.title}</h3>
-                <p style={{ fontFamily: "Georgia, serif", fontSize: "0.92rem", color: b.stone, lineHeight: 1.8 }}>{s.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── LIKERT SCALE ── */}
-      <div style={{ background: `linear-gradient(135deg, ${b.purpleDark}, ${b.purple})`, padding: "80px 24px", position: "relative", overflow: "hidden" }}>
-        <svg style={{ position: "absolute", right: -40, top: -20, opacity: 0.07, pointerEvents: "none" }} width="320" height="260" viewBox="0 0 320 260" fill="none">
-          <polygon points="0,100 130,26 260,100 228,100 130,46 32,100" fill="white" />
-          <polygon points="0,145 130,71 260,145 228,145 130,91 32,145" fill="white" />
-        </svg>
-        <div style={{ maxWidth: 860, margin: "0 auto" }}>
-          <div style={{ marginBottom: 48 }}>
-            <SectionLabel color="rgba(255,255,255,0.5)">Understanding the Scale</SectionLabel>
-            <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.4rem)", color: b.white, fontWeight: 900, marginBottom: 16 }}>The Wellbeing Check-In</h2>
-            <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "rgba(255,255,255,0.7)", lineHeight: 1.8, maxWidth: 580 }}>
-              At the start of each session you'll rate how you're feeling across four dimensions using what's called a Likert scale — a simple 1 to 5 rating. Here's what each score means:
-            </p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px,1fr))", gap: 14, marginBottom: 40 }}>
-            {likertSteps.map(l => (
-              <div key={l.score} style={{ background: "rgba(255,255,255,0.1)", borderRadius: 12, padding: "22px 16px", textAlign: "center", border: "1px solid rgba(255,255,255,0.15)" }}>
-                <div style={{ fontSize: "2rem", marginBottom: 8 }}>{l.emoji}</div>
-                <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1.3rem", color: b.white, marginBottom: 4 }}>{l.score}</p>
-                <p style={{ fontFamily: "Georgia, serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", fontWeight: 600, marginBottom: 6 }}>{l.label}</p>
-                <p style={{ fontFamily: "Georgia, serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.5 }}>{l.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 12, padding: "24px 28px", border: "1px solid rgba(255,255,255,0.12)" }}>
-            <p style={{ fontFamily: "Georgia, serif", fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.8 }}>
-              <strong style={{ color: b.white }}>Why four dimensions?</strong> We measure Overall Mood, Energy & Motivation, Creative Engagement, and Sense of Connection separately — because wellbeing isn't one single thing. You might feel energised but creatively blocked, or low in mood but deeply connected. Tracking each dimension gives a richer, more honest picture.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* ── REFLECTIONS ── */}
-      <div style={{ background: b.warm, padding: "80px 24px" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 36 : 60, alignItems: "center" }}>
-            <div>
-              <SectionLabel color={b.purple}>Writing Reflections</SectionLabel>
-              <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.2rem)", color: b.ink, fontWeight: 900, marginBottom: 16, lineHeight: 1.1 }}>Why Write About Your Art?</h2>
-              <Divider />
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#3a3040", lineHeight: 1.85, marginBottom: 20 }}>
-                The act of making is only part of the story. Writing about what you created — even briefly — helps you process the experience, notice what's changing, and create a record of your journey over time.
-              </p>
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "1rem", color: "#3a3040", lineHeight: 1.85 }}>
-                Research consistently shows that expressive writing alongside creative practice deepens the wellbeing benefits of art-making. You don't need to be a good writer. You just need to be honest.
-              </p>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 12 : 16 }}>
-              {reflectionTips.map(tip => (
-                <div key={tip.title} style={{
-                  background: b.white, borderRadius: 12,
-                  padding: isMobile ? "18px 20px" : "22px 18px",
-                  border: `1px solid ${b.border}`,
-                  borderLeft: isMobile ? `4px solid ${b.purple}` : `1px solid ${b.border}`,
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
-                  display: isMobile ? "flex" : "block",
-                  alignItems: isMobile ? "flex-start" : "unset",
-                  gap: isMobile ? 16 : 0,
-                }}>
-                  <div style={{ fontSize: isMobile ? "1.8rem" : "1.6rem", marginBottom: isMobile ? 0 : 10, flexShrink: 0 }}>{tip.icon}</div>
-                  <div>
-                    <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.82rem", color: b.purple, marginBottom: 6 }}>{tip.title}</p>
-                    <p style={{ fontFamily: "Georgia, serif", fontSize: "0.85rem", color: b.stone, lineHeight: 1.7 }}>{tip.body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
