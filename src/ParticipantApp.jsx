@@ -343,6 +343,52 @@ function LandingPage({ setView, onPortal }) {
         </div>
       </div>
 
+      {/* ── WATCH & LEARN ── */}
+      <div style={{ background: `linear-gradient(135deg, ${b.purpleDark}, ${b.purple})`, padding: "80px 24px", position: "relative", overflow: "hidden" }}>
+        <svg style={{ position: "absolute", right: -40, top: -20, opacity: 0.07, pointerEvents: "none" }} width="320" height="260" viewBox="0 0 320 260" fill="none">
+          <polygon points="0,100 130,26 260,100 228,100 130,46 32,100" fill="white" />
+          <polygon points="0,145 130,71 260,145 228,145 130,91 32,145" fill="white" />
+        </svg>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <SectionLabel color="rgba(255,255,255,0.5)">Mātakitaki mai</SectionLabel>
+            <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.4rem)", color: b.white, fontWeight: 900, marginBottom: 16 }}>Watch & Learn</h2>
+            <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.8, maxWidth: 520, margin: "0 auto" }}>
+              Before you begin, take a few minutes to watch these short videos. They'll walk you through what to expect and how to get the most from your experience.
+            </p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
+            {[
+              { num: "01", title: "Welcome to the Wānanga",     desc: "An introduction to the programme, who we are, and what we're hoping to learn together." },
+              { num: "02", title: "How to Write a Reflection",  desc: "A short guide to written reflection — what it is, why it helps, and how to get started." },
+              { num: "03", title: "Uploading Your Artwork",     desc: "Everything you need to know about sharing your creative work through the portal." },
+            ].map(v => (
+              <div key={v.num} style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
+                {/* Video placeholder */}
+                <div style={{ aspectRatio: "16/9", background: "rgba(0,0,0,0.3)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", cursor: "pointer", position: "relative" }}>
+                  <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.06 }} viewBox="0 0 320 180" fill="none">
+                    <polygon points="0,60 120,10 240,60 210,60 120,24 30,60" fill="white" />
+                    <polygon points="80,120 200,70 320,120 290,120 200,84 110,120" fill="white" />
+                  </svg>
+                  <div style={{ width: 52, height: 52, borderRadius: "50%", background: `${b.red}bb`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 4px 20px ${b.red}55`, zIndex: 1 }}>
+                    <div style={{ width: 0, height: 0, borderTop: "9px solid transparent", borderBottom: "9px solid transparent", borderLeft: "16px solid #fff", marginLeft: 4 }} />
+                  </div>
+                  <p style={{ fontFamily: "Georgia, serif", fontSize: "0.72rem", color: "rgba(255,255,255,0.4)", marginTop: 12, letterSpacing: 0.5, zIndex: 1 }}>Video coming soon</p>
+                </div>
+                {/* Card info */}
+                <div style={{ padding: "20px 22px 24px" }}>
+                  <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 28, height: 28, borderRadius: "50%", background: b.red, marginBottom: 12 }}>
+                    <span style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.65rem", color: "#fff", fontWeight: 900 }}>{v.num}</span>
+                  </div>
+                  <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.95rem", color: b.white, marginBottom: 8, lineHeight: 1.2 }}>{v.title}</h3>
+                  <p style={{ fontFamily: "Georgia, serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>{v.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* ── UPLOADING ARTWORK ── */}
       <div style={{ background: b.offwhite, padding: "80px 24px" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
