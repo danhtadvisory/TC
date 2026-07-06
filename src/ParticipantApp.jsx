@@ -345,11 +345,12 @@ function LandingPage({ setView, onPortal }) {
               Before you begin, take a few minutes to watch these short videos. They'll walk you through what to expect and how to get the most from your experience.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 24 }}>
             {[
-              { num: "01", title: "Welcome to the Wānanga",     desc: "An introduction to the programme, who we are, and what we're hoping to learn together." },
-              { num: "02", title: "How to Write a Reflection",  desc: "A short guide to written reflection — what it is, why it helps, and how to get started." },
-              { num: "03", title: "Uploading Your Artwork",     desc: "Everything you need to know about sharing your creative work through the portal." },
+              { num: "01", title: "Introduction",                    desc: "Why you're here and the research purpose — an overview of the study and what we're hoping to learn together." },
+              { num: "02", title: "What's Involved in Participating", desc: "What participation looks like day-to-day, the benefits of taking part, and the koha you'll receive." },
+              { num: "03", title: "Participant Rights",               desc: "Your safety and support, confidentiality, data management, and intellectual property — what belongs to you and how we protect it." },
+              { num: "04", title: "Closing & Questions",             desc: "A wrap-up of everything covered, and an opportunity to ask any questions before you decide whether to participate." },
             ].map(v => (
               <div key={v.num} style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
                 {/* Video placeholder */}
