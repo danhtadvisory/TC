@@ -347,10 +347,10 @@ function LandingPage({ setView, onPortal }) {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 24 }}>
             {[
-              { num: "01", title: "Introduction",                    desc: "Why you're here and the research purpose — an overview of the study and what we're hoping to learn together." },
-              { num: "02", title: "What's Involved in Participating", desc: "What participation looks like day-to-day, the benefits of taking part, and the koha you'll receive." },
-              { num: "03", title: "Participant Rights",               desc: "Your safety and support, confidentiality, data management, and intellectual property — what belongs to you and how we protect it." },
-              { num: "04", title: "Closing & Questions",             desc: "A wrap-up of everything covered, and an opportunity to ask any questions before you decide whether to participate." },
+              { num: "01", title: "Introduction | Why you're here | Research purpose",                                                              desc: "An overview of the study, who we are, and what we're hoping to learn together with rangatahi." },
+              { num: "02", title: "What's involved in participating | Benefit | Koha",                                                              desc: "What participation looks like, the benefits of taking part, and the koha you'll receive for your time." },
+              { num: "03", title: "Participant rights | Safety & support | Confidentiality | Data management | Intellectual property",              desc: "Your rights as a participant, how we keep you safe, how your information is stored, and what belongs to you." },
+              { num: "04", title: "Closing & Questions",                                                                                            desc: "A wrap-up of everything covered, and an opportunity to ask any questions before you decide whether to participate." },
             ].map(v => (
               <div key={v.num} style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, overflow: "hidden", border: "1px solid rgba(255,255,255,0.12)" }}>
                 {/* Video placeholder */}
