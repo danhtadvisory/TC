@@ -221,44 +221,52 @@ function SiteFooter({ setView, onPortal = () => {} }) {
   return (
     <footer style={{ background: b.ink }}>
       <RainbowBar />
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 28px 28px" }}>
-        <div style={{ display: "flex", gap: 60, flexWrap: "wrap", marginBottom: 40 }}>
-          <div style={{ flex: "1 1 220px" }}>
-            <LogoFull size={80} />
-            <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", color: "rgba(255,255,255,0.4)", fontSize: "0.85rem", marginTop: 16, lineHeight: 1.7, maxWidth: 260 }}>
-              A guided art and wellbeing programme exploring the connection between creative practice and mental health.
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: "56px 28px 32px" }}>
+
+        {/* Top section — logo/tagline left, nav right */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 40, flexWrap: "wrap", marginBottom: 48 }}>
+
+          {/* Brand */}
+          <div style={{ maxWidth: 300 }}>
+            <LogoFull size={72} />
+            <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", color: "rgba(255,255,255,0.45)", fontSize: "0.85rem", marginTop: 18, lineHeight: 1.8 }}>
+              Our experiences, ideas, and stories can help shape resources that feel real, relevant, and useful for rangatahi across Aotearoa. Your voice matters. Help shape what's next.
             </p>
           </div>
-          <div style={{ flex: "1 1 160px" }}>
-            <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.68rem", color: b.teal, letterSpacing: 2, textTransform: "uppercase", marginBottom: 16 }}>Navigate</p>
-            {[["home","Home"],["about","About"],["contact","Contact"],["support","Find Support"]].map(([id, lbl]) => (
-              <button key={id} onClick={() => setView(id)} style={{ display: "block", background: "none", border: "none", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: "0.88rem", cursor: "pointer", padding: "4px 0", textAlign: "left", transition: "color 0.15s" }}
-                onMouseEnter={e => e.currentTarget.style.color = b.teal}
-                onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.45)"}>
-                → {lbl}
-              </button>
-            ))}
-            <button onClick={onPortal} style={{ display: "block", background: "none", border: "none", color: "rgba(255,255,255,0.45)", fontFamily: "Georgia, serif", fontSize: "0.88rem", cursor: "pointer", padding: "4px 0", textAlign: "left", transition: "color 0.15s" }}
-              onMouseEnter={e => e.currentTarget.style.color = b.teal}
-              onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.45)"}>
-              → Participant Portal
-            </button>
-          </div>
-          <div style={{ flex: "1 1 200px" }}>
-            <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.68rem", color: b.red, letterSpacing: 2, textTransform: "uppercase", marginBottom: 16 }}>About</p>
-            {["About the Programme", "Research Background", "Facilitator Resources", "Contact Us"].map(item => (
-              <p key={item} style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: "rgba(255,255,255,0.3)", padding: "4px 0" }}>· {item}</p>
-            ))}
+
+          {/* Nav */}
+          <div>
+            <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.65rem", color: b.teal, letterSpacing: 3, textTransform: "uppercase", marginBottom: 20 }}>Navigate</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {[["home","Home"],["about","About"],["contact","Contact"],["support","Find Support"]].map(([id, lbl]) => (
+                <button key={id} onClick={() => setView(id)} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", color: "rgba(255,255,255,0.5)", fontFamily: "Georgia, serif", fontSize: "0.92rem", cursor: "pointer", padding: 0, textAlign: "left", transition: "color 0.15s" }}
+                  onMouseEnter={e => e.currentTarget.style.color = b.teal}
+                  onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.5)"}>
+                  <span style={{ color: b.teal, fontSize: "0.7rem" }}>→</span> {lbl}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-        <div style={{ height: 1, background: "rgba(255,255,255,0.06)", marginBottom: 20 }} />
-        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-          <p style={{ fontFamily: "Georgia, serif", fontSize: "0.73rem", color: "rgba(255,255,255,0.22)" }}>© 2026 Ngā Piki me Ngā Heke. Research prototype.</p>
-          <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "0.7rem", color: "rgba(255,255,255,0.16)" }}>Ngā mihi ki ngā tangata whenua o te rohe nei</p>
-        </div>
-        <p style={{ fontFamily: "Georgia, serif", fontSize: "0.7rem", color: "rgba(255,255,255,0.22)", marginTop: 16, lineHeight: 1.8, textAlign: "center" }}>
-          Approved by the University of Auckland Human Participants Ethics Committee on [date] for three years. Reference Number [number]. For any concerns regarding ethical issues, you may contact The University of Auckland Human Participants Ethics Committee/Auckland Health Research Ethics Committee: <a href="mailto:humanethics@auckland.ac.nz" style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none" }}>humanethics@auckland.ac.nz</a>
+
+        {/* Divider */}
+        <div style={{ height: 1, background: "rgba(255,255,255,0.07)", marginBottom: 24 }} />
+
+        {/* Ethics notice */}
+        <p style={{ fontFamily: "Georgia, serif", fontSize: "0.7rem", color: "rgba(255,255,255,0.28)", lineHeight: 1.9, marginBottom: 20, textAlign: "center", maxWidth: 760, margin: "0 auto 20px" }}>
+          Approved by the University of Auckland Human Participants Ethics Committee on [date] for three years. Reference Number [number]. For any concerns regarding ethical issues, you may contact The University of Auckland Human Participants Ethics Committee/Auckland Health Research Ethics Committee:{" "}
+          <a href="mailto:humanethics@auckland.ac.nz" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "underline" }}>humanethics@auckland.ac.nz</a>
         </p>
+
+        {/* Divider */}
+        <div style={{ height: 1, background: "rgba(255,255,255,0.05)", marginBottom: 20 }} />
+
+        {/* Copyright row */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+          <p style={{ fontFamily: "Georgia, serif", fontSize: "0.72rem", color: "rgba(255,255,255,0.2)" }}>© 2026 Ngā Piki me Ngā Heke.</p>
+          <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "0.68rem", color: "rgba(255,255,255,0.15)" }}>Ngā mihi ki ngā tangata whenua o te rohe nei</p>
+        </div>
+
       </div>
     </footer>
   );
@@ -690,11 +698,6 @@ function SupportPage({ setView, onPortal = () => {} }) {
             </div>
           ))}
 
-          <div style={{ background: b.purplePale, borderRadius: 12, padding: "28px 32px", border: `1px solid ${b.purple}20`, textAlign: "center" }}>
-            <p style={{ fontFamily: "Georgia, serif", fontSize: "0.95rem", color: b.purple, lineHeight: 1.8 }}>
-              Taking part in this programme and finding things difficult? Please reach out to your facilitator or use any of the services above. Your wellbeing comes first — always.
-            </p>
-          </div>
         </div>
       </div>
       <SiteFooter setView={setView} onPortal={onPortal} />
