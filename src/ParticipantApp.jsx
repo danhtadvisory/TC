@@ -434,6 +434,123 @@ function LandingPage({ setView, onPortal }) {
         </div>
       </div>
 
+      {/* ── SIGN UP / PIS & CONSENT ── */}
+      <div style={{ background: b.offwhite, padding: "80px 24px" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+
+          {/* Section header */}
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <SectionLabel color={b.teal}>Tukua mai</SectionLabel>
+            <h2 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(1.6rem,4vw,2.4rem)", color: b.ink, fontWeight: 900, marginBottom: 16 }}>Want to Take Part?</h2>
+            <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: b.stone, lineHeight: 1.8, maxWidth: 580, margin: "0 auto" }}>
+              Before you sign up, please read the Participant Information Sheet so you understand what's involved. Then complete the consent form when you're ready.
+            </p>
+          </div>
+
+          {/* Eligibility */}
+          <div style={{ background: b.purplePale, borderRadius: 14, padding: "28px 32px", marginBottom: 32, border: `2px solid ${b.purple}20` }}>
+            <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.9rem", color: b.purple, marginBottom: 16 }}>Am I eligible?</h3>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 12 }}>
+              {[
+                { icon: "🌿", text: "You whakapapa Māori" },
+                { icon: "📍", text: "You live in Tāmaki Makaurau / Auckland or Te Tai Tokerau / Northland" },
+                { icon: "🎂", text: "You are aged 16–24 years" },
+                { icon: "💛", text: "You are not experiencing emotional distress right now" },
+              ].map(item => (
+                <div key={item.text} style={{ display: "flex", alignItems: "flex-start", gap: 12, background: b.white, borderRadius: 10, padding: "14px 16px", border: `1px solid ${b.purple}15` }}>
+                  <span style={{ fontSize: "1.2rem", flexShrink: 0 }}>{item.icon}</span>
+                  <p style={{ fontFamily: "Georgia, serif", fontSize: "0.92rem", color: "#3a3040", lineHeight: 1.6 }}>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* PIS + Consent cards */}
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 20, marginBottom: 32 }}>
+
+            {/* PIS card */}
+            <div style={{ background: b.white, borderRadius: 14, border: `1px solid ${b.border}`, borderTop: `4px solid ${b.teal}`, padding: "28px 28px 24px", boxShadow: "0 4px 20px rgba(0,0,0,0.04)", display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: b.tealPale, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem", flexShrink: 0 }}>📄</div>
+                <div>
+                  <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", color: b.teal, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 3 }}>Step 1</p>
+                  <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1rem", color: b.ink }}>Participant Information Sheet</h3>
+                </div>
+              </div>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: b.stone, lineHeight: 1.75, marginBottom: 20, flex: 1 }}>
+                Read this first. It explains the project in full — what we're doing, why, what's involved, your rights, how your information will be stored, and who to contact if you have questions. You can also share this with your whānau.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <a href="/pis.pdf" download style={{
+                  display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                  padding: "12px 20px", borderRadius: 8, textDecoration: "none",
+                  background: b.teal, color: b.white,
+                  fontFamily: "'Arial Black', sans-serif", fontSize: "0.72rem", letterSpacing: 1.5, textTransform: "uppercase",
+                }}>
+                  ⬇ Download PIS (PDF)
+                </a>
+              </div>
+            </div>
+
+            {/* Consent card */}
+            <div style={{ background: b.white, borderRadius: 14, border: `1px solid ${b.border}`, borderTop: `4px solid ${b.purple}`, padding: "28px 28px 24px", boxShadow: "0 4px 20px rgba(0,0,0,0.04)", display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: b.purplePale, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem", flexShrink: 0 }}>✅</div>
+                <div>
+                  <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", color: b.purple, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 3 }}>Step 2</p>
+                  <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1rem", color: b.ink }}>Consent Form</h3>
+                </div>
+              </div>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: b.stone, lineHeight: 1.75, marginBottom: 12, flex: 1 }}>
+                Once you've read the PIS and are happy to proceed, complete your consent online. The form confirms you understand the study, your rights, and what you're agreeing to. You can also download a copy for your records.
+              </p>
+              <div style={{ background: b.warm, borderRadius: 8, padding: "10px 14px", marginBottom: 16, border: `1px solid ${b.border}` }}>
+                <p style={{ fontFamily: "Georgia, serif", fontSize: "0.75rem", color: b.stone, lineHeight: 1.6 }}>
+                  🔒 This consent will be stored for 6 years in line with University of Auckland ethics requirements. Reference Number pending approval.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <a href="https://auckland.au1.qualtrics.com/jfe/form/SV_di1fNWnJlnunqxE" target="_blank" rel="noopener noreferrer" style={{
+                  display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                  padding: "12px 20px", borderRadius: 8, textDecoration: "none",
+                  background: `linear-gradient(135deg, ${b.purple}, ${b.purpleDark})`,
+                  color: b.white, fontFamily: "'Arial Black', sans-serif", fontSize: "0.72rem", letterSpacing: 1.5, textTransform: "uppercase",
+                  boxShadow: `0 4px 16px ${b.purple}40`,
+                }}>
+                  Complete Consent Form →
+                </a>
+                <a href="/consent.pdf" download style={{
+                  display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                  padding: "10px 20px", borderRadius: 8, textDecoration: "none",
+                  background: "transparent", color: b.purple,
+                  border: `2px solid ${b.purple}40`,
+                  fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", letterSpacing: 1, textTransform: "uppercase",
+                }}>
+                  ⬇ Download Consent Form (PDF)
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Questions / contact */}
+          <div style={{ background: b.white, borderRadius: 12, padding: "22px 28px", border: `1px solid ${b.border}`, display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
+            <span style={{ fontSize: "1.4rem", flexShrink: 0 }}>💬</span>
+            <div>
+              <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.82rem", color: b.ink, marginBottom: 6 }}>Have questions before you sign up?</p>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: b.stone, lineHeight: 1.7 }}>
+                You can email the research team at any time — <a href="mailto:t.clark@auckland.ac.nz" style={{ color: b.teal, textDecoration: "none" }}>t.clark@auckland.ac.nz</a> — or visit <a href="https://www.ngapiki.co.nz" target="_blank" rel="noopener noreferrer" style={{ color: b.teal, textDecoration: "none" }}>www.ngapiki.co.nz</a>. There's no pressure — participation is completely voluntary and you can withdraw at any time.
+              </p>
+            </div>
+          </div>
+
+          {/* Ethics notice */}
+          <p style={{ fontFamily: "Georgia, serif", fontSize: "0.72rem", color: b.stone, textAlign: "center", marginTop: 24, lineHeight: 1.7, opacity: 0.7 }}>
+            Approved by the University of Auckland Human Participants Ethics Committee. Principal Investigator: Professor Terryann Clark, School of Nursing. Funded by Cure Kids. For ethical concerns contact <a href="mailto:humanethics@auckland.ac.nz" style={{ color: b.stone }}>humanethics@auckland.ac.nz</a>
+          </p>
+
+        </div>
+      </div>
+
       {/* ── FIND SUPPORT CTA ── */}
       <div style={{ background: b.redPale, padding: "60px 24px", borderTop: `4px solid ${b.red}20` }}>
         <div style={{ maxWidth: 660, margin: "0 auto", textAlign: "center" }}>
