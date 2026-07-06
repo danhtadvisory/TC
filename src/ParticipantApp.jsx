@@ -256,6 +256,9 @@ function SiteFooter({ setView, onPortal = () => {} }) {
           <p style={{ fontFamily: "Georgia, serif", fontSize: "0.73rem", color: "rgba(255,255,255,0.22)" }}>© 2026 Ngā Piki me Ngā Heke. Research prototype.</p>
           <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "0.7rem", color: "rgba(255,255,255,0.16)" }}>Ngā mihi ki ngā tangata whenua o te rohe nei</p>
         </div>
+        <p style={{ fontFamily: "Georgia, serif", fontSize: "0.7rem", color: "rgba(255,255,255,0.22)", marginTop: 16, lineHeight: 1.8, textAlign: "center" }}>
+          Approved by the University of Auckland Human Participants Ethics Committee on [date] for three years. Reference Number [number]. For any concerns regarding ethical issues, you may contact The University of Auckland Human Participants Ethics Committee/Auckland Health Research Ethics Committee: <a href="mailto:humanethics@auckland.ac.nz" style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none" }}>humanethics@auckland.ac.nz</a>
+        </p>
       </div>
     </footer>
   );
@@ -423,11 +426,6 @@ function LandingPage({ setView, onPortal }) {
               </div>
             </div>
           </div>
-
-          {/* Ethics notice */}
-          <p style={{ fontFamily: "Georgia, serif", fontSize: "0.72rem", color: "rgba(255,255,255,0.3)", textAlign: "center", lineHeight: 1.7 }}>
-            Approved by the University of Auckland Human Participants Ethics Committee. Principal Investigator: Professor Terryann Clark, School of Nursing. Funded by Cure Kids. For ethical concerns contact <a href="mailto:humanethics@auckland.ac.nz" style={{ color: "rgba(255,255,255,0.3)" }}>humanethics@auckland.ac.nz</a>
-          </p>
 
         </div>
       </div>
