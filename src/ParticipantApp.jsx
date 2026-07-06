@@ -321,7 +321,7 @@ function LandingPage({ setView, onPortal }) {
             </div>
             <div>
               <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "#3a3040", lineHeight: 1.9, marginBottom: 20 }}>
-                We are a small research team from Te Whare Wānanga o Tāmaki Makaurau — The University of Auckland. Most of us whakapapa Māori. All of us are committed to doing research that improves the lives of rangatahi Māori. Our team includes experienced Kaupapa Māori researchers, as well as creative and technical experts.
+                We are a small research team from Waipapa Taumata Rau — The University of Auckland. Most of us whakapapa Māori. All of us are committed to doing research that improves the lives of rangatahi Māori. Our team includes experienced Kaupapa Māori researchers, as well as creative and technical experts.
               </p>
               <p style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "#3a3040", lineHeight: 1.9 }}>
                 With this study we are seeking to learn more about how rangatahi keep well emotionally — what keeps you strong and connected during the ups and downs of life. We will do this through a spoken word poetry wānanga. We hope this creativity will help you share your insights in ways that are fun and interesting. These insights will help us design programmes and interventions that rangatahi Māori find helpful and that they actually want to do.
