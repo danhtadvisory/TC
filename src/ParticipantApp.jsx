@@ -169,15 +169,6 @@ function SiteNav({ currentView, setView, onPortal }) {
                   {l.label}
                 </button>
               ))}
-              <button onClick={onPortal} style={{
-                background: `linear-gradient(135deg, ${b.teal}, ${b.tealDark})`,
-                border: "none", color: "#fff", fontFamily: "'Arial Black', sans-serif",
-                fontSize: "0.7rem", letterSpacing: 1.5, padding: "9px 20px", borderRadius: 6,
-                cursor: "pointer", textTransform: "uppercase", marginLeft: 8,
-                boxShadow: `0 2px 12px ${b.teal}40`, transition: "all 0.2s",
-              }}>
-                Participant Portal
-              </button>
             </div>
           )}
 
@@ -216,17 +207,6 @@ function SiteNav({ currentView, setView, onPortal }) {
                 {l.label}
               </button>
             ))}
-            <div style={{ margin: "12px 28px 0" }}>
-              <button onClick={onPortal} style={{
-                width: "100%", padding: "14px", borderRadius: 8,
-                background: `linear-gradient(135deg, ${b.teal}, ${b.tealDark})`,
-                border: "none", color: "#fff", fontFamily: "'Arial Black', sans-serif",
-                fontSize: "0.78rem", letterSpacing: 1.5, cursor: "pointer",
-                textTransform: "uppercase", boxShadow: `0 2px 12px ${b.teal}30`,
-              }}>
-                Participant Portal
-              </button>
-            </div>
           </div>
         </div>
       )}
