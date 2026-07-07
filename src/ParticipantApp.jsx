@@ -394,8 +394,9 @@ function LandingPage({ setView, onPortal }) {
               <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: b.stone, lineHeight: 1.75, marginBottom: 20, flex: 1 }}>
                 Read this first. It explains the project in full — what we're doing, why, what's involved, your rights, how your information will be stored, and who to contact if you have questions. You can also share this with your whānau.
               </p>
-              <a href="/pis.pdf" download style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "12px 20px", borderRadius: 8, textDecoration: "none", background: b.teal, color: b.white, fontFamily: "'Arial Black', sans-serif", fontSize: "0.72rem", letterSpacing: 1.5, textTransform: "uppercase" }}>
-                ⬇ Download PIS (PDF)
+              <a href="/pis.pdf" download style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, padding: "12px 20px", borderRadius: 8, textDecoration: "none", background: b.teal, color: b.white, fontFamily: "'Arial Black', sans-serif", fontSize: "0.72rem", letterSpacing: 1.5, textTransform: "uppercase" }}>
+                <span>Download</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M5 7l3 3 3-3M2 12h12" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
             </div>
 
@@ -420,8 +421,9 @@ function LandingPage({ setView, onPortal }) {
                 <a href="https://auckland.au1.qualtrics.com/jfe/form/SV_di1fNWnJlnunqxE" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "12px 20px", borderRadius: 8, textDecoration: "none", background: `linear-gradient(135deg, ${b.red}, ${b.redDark})`, color: b.white, fontFamily: "'Arial Black', sans-serif", fontSize: "0.72rem", letterSpacing: 1.5, textTransform: "uppercase", boxShadow: `0 4px 16px ${b.red}40` }}>
                   Complete Consent Form →
                 </a>
-                <a href="/consent.pdf" download style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "10px 20px", borderRadius: 8, textDecoration: "none", background: "transparent", color: b.stone, border: `2px solid ${b.border}`, fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", letterSpacing: 1, textTransform: "uppercase" }}>
-                  ⬇ Download Consent Form (PDF)
+                <a href="/consent.pdf" download style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, padding: "10px 20px", borderRadius: 8, textDecoration: "none", background: "transparent", color: b.stone, border: `2px solid ${b.border}`, fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", letterSpacing: 1, textTransform: "uppercase" }}>
+                  <span>Download</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M5 7l3 3 3-3M2 12h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               </div>
             </div>
