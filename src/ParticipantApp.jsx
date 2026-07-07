@@ -374,19 +374,24 @@ function LandingPage({ setView, onPortal }) {
             ))}
           </div>
 
-          {/* PIS + Consent cards */}
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 20, marginBottom: 24, marginTop: 40 }}>
+        </div>
+      </div>
+
+      {/* ── PIS & CONSENT ── */}
+      <div style={{ background: b.offwhite, padding: "60px 24px" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 20 }}>
 
             {/* PIS card */}
-            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 14, border: "1px solid rgba(255,255,255,0.15)", borderTop: `4px solid ${b.teal}`, padding: "28px 28px 24px", display: "flex", flexDirection: "column" }}>
+            <div style={{ background: b.white, borderRadius: 14, border: `1px solid ${b.border}`, borderTop: `4px solid ${b.teal}`, padding: "28px 28px 24px", display: "flex", flexDirection: "column", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem", flexShrink: 0 }}>📄</div>
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: b.tealPale, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem", flexShrink: 0 }}>📄</div>
                 <div>
                   <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", color: b.teal, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 3 }}>Step 1</p>
-                  <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1rem", color: b.white }}>Participant Information Sheet</h3>
+                  <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1rem", color: b.ink }}>Participant Information Sheet</h3>
                 </div>
               </div>
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 20, flex: 1 }}>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: b.stone, lineHeight: 1.75, marginBottom: 20, flex: 1 }}>
                 Read this first. It explains the project in full — what we're doing, why, what's involved, your rights, how your information will be stored, and who to contact if you have questions. You can also share this with your whānau.
               </p>
               <a href="/pis.pdf" download style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "12px 20px", borderRadius: 8, textDecoration: "none", background: b.teal, color: b.white, fontFamily: "'Arial Black', sans-serif", fontSize: "0.72rem", letterSpacing: 1.5, textTransform: "uppercase" }}>
@@ -395,33 +400,32 @@ function LandingPage({ setView, onPortal }) {
             </div>
 
             {/* Consent card */}
-            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 14, border: "1px solid rgba(255,255,255,0.15)", borderTop: `4px solid ${b.red}`, padding: "28px 28px 24px", display: "flex", flexDirection: "column" }}>
+            <div style={{ background: b.white, borderRadius: 14, border: `1px solid ${b.border}`, borderTop: `4px solid ${b.red}`, padding: "28px 28px 24px", display: "flex", flexDirection: "column", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem", flexShrink: 0 }}>✅</div>
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: b.redPale, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem", flexShrink: 0 }}>✅</div>
                 <div>
                   <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", color: b.red, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 3 }}>Step 2</p>
-                  <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1rem", color: b.white }}>Consent Form</h3>
+                  <h3 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "1rem", color: b.ink }}>Consent Form</h3>
                 </div>
               </div>
-              <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 12, flex: 1 }}>
+              <p style={{ fontFamily: "Georgia, serif", fontSize: "0.88rem", color: b.stone, lineHeight: 1.75, marginBottom: 12, flex: 1 }}>
                 Once you've watched the videos and read the PIS, complete your consent online. The form confirms you understand the study, your rights, and what you're agreeing to. You can also download a copy for your records.
               </p>
-              <div style={{ background: "rgba(0,0,0,0.2)", borderRadius: 8, padding: "10px 14px", marginBottom: 16, border: "1px solid rgba(255,255,255,0.1)" }}>
-                <p style={{ fontFamily: "Georgia, serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.6 }}>
+              <div style={{ background: b.warm, borderRadius: 8, padding: "10px 14px", marginBottom: 16, border: `1px solid ${b.border}` }}>
+                <p style={{ fontFamily: "Georgia, serif", fontSize: "0.75rem", color: b.stone, lineHeight: 1.6 }}>
                   🔒 This consent will be stored for 6 years in line with University of Auckland ethics requirements. Reference Number pending approval.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                <a href="https://auckland.au1.qualtrics.com/jfe/form/SV_di1fNWnJlnunqxE" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "12px 20px", borderRadius: 8, textDecoration: "none", background: `linear-gradient(135deg, ${b.red}, ${b.redDark})`, color: b.white, fontFamily: "'Arial Black', sans-serif", fontSize: "0.72rem", letterSpacing: 1.5, textTransform: "uppercase", boxShadow: `0 4px 16px ${b.red}50` }}>
+                <a href="https://auckland.au1.qualtrics.com/jfe/form/SV_di1fNWnJlnunqxE" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "12px 20px", borderRadius: 8, textDecoration: "none", background: `linear-gradient(135deg, ${b.red}, ${b.redDark})`, color: b.white, fontFamily: "'Arial Black', sans-serif", fontSize: "0.72rem", letterSpacing: 1.5, textTransform: "uppercase", boxShadow: `0 4px 16px ${b.red}40` }}>
                   Complete Consent Form →
                 </a>
-                <a href="/consent.pdf" download style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "10px 20px", borderRadius: 8, textDecoration: "none", background: "transparent", color: "rgba(255,255,255,0.7)", border: "2px solid rgba(255,255,255,0.25)", fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", letterSpacing: 1, textTransform: "uppercase" }}>
+                <a href="/consent.pdf" download style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "10px 20px", borderRadius: 8, textDecoration: "none", background: "transparent", color: b.stone, border: `2px solid ${b.border}`, fontFamily: "'Arial Black', sans-serif", fontSize: "0.7rem", letterSpacing: 1, textTransform: "uppercase" }}>
                   ⬇ Download Consent Form (PDF)
                 </a>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
