@@ -219,52 +219,39 @@ function SiteNav({ currentView, setView, onPortal }) {
 ═══════════════════════════════════════════════════════ */
 function SiteFooter({ setView, onPortal = () => {} }) {
   return (
-    <footer style={{ background: b.ink }}>
+    <footer style={{ background: "#1a1020" }}>
       <RainbowBar />
-      <div style={{ maxWidth: 900, margin: "0 auto", padding: "56px 28px 32px" }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: "40px 28px 24px" }}>
 
-        {/* Top section — logo/tagline left, nav right */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 40, flexWrap: "wrap", marginBottom: 48 }}>
-
-          {/* Brand */}
-          <div style={{ maxWidth: 300 }}>
-            <LogoFull size={72} />
-            <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", color: "rgba(255,255,255,0.45)", fontSize: "0.85rem", marginTop: 18, lineHeight: 1.8 }}>
-              Our experiences, ideas, and stories can help shape resources that feel real, relevant, and useful for rangatahi across Aotearoa. Your voice matters. Help shape what's next.
-            </p>
-          </div>
-
-          {/* Nav */}
-          <div>
-            <p style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "0.65rem", color: b.teal, letterSpacing: 3, textTransform: "uppercase", marginBottom: 20 }}>Navigate</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {[["home","Home"],["about","About"],["contact","Contact"],["support","Find Support"]].map(([id, lbl]) => (
-                <button key={id} onClick={() => setView(id)} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", color: "rgba(255,255,255,0.5)", fontFamily: "Georgia, serif", fontSize: "0.92rem", cursor: "pointer", padding: 0, textAlign: "left", transition: "color 0.15s" }}
-                  onMouseEnter={e => e.currentTarget.style.color = b.teal}
-                  onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.5)"}>
-                  <span style={{ color: b.teal, fontSize: "0.7rem" }}>→</span> {lbl}
-                </button>
-              ))}
-            </div>
+        {/* Row 1 — logo name + nav links inline */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16, paddingBottom: 20, borderBottom: "0.5px solid rgba(255,255,255,0.12)" }}>
+          <span style={{ fontFamily: "'Arial Black', sans-serif", fontWeight: 900, fontSize: "1rem", color: b.red, letterSpacing: "-0.01em" }}>NGĀ PIKI me NGĀ HEKE</span>
+          <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
+            {[["home","Home"],["about","About"],["contact","Contact"],["support","Find Support"]].map(([id, lbl]) => (
+              <button key={id} onClick={() => setView(id)} style={{ background: "none", border: "none", fontFamily: "Georgia, serif", fontSize: "0.88rem", color: "rgba(255,255,255,0.5)", cursor: "pointer", padding: 0, transition: "color 0.15s" }}
+                onMouseEnter={e => e.currentTarget.style.color = b.teal}
+                onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.5)"}>
+                {lbl}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Divider */}
-        <div style={{ height: 1, background: "rgba(255,255,255,0.07)", marginBottom: 24 }} />
-
-        {/* Ethics notice */}
-        <p style={{ fontFamily: "Georgia, serif", fontSize: "0.7rem", color: "rgba(255,255,255,0.28)", lineHeight: 1.9, marginBottom: 20, textAlign: "center", maxWidth: 760, margin: "0 auto 20px" }}>
-          Approved by the University of Auckland Human Participants Ethics Committee on [date] for three years. Reference Number [number]. For any concerns regarding ethical issues, you may contact The University of Auckland Human Participants Ethics Committee/Auckland Health Research Ethics Committee:{" "}
-          <a href="mailto:humanethics@auckland.ac.nz" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "underline" }}>humanethics@auckland.ac.nz</a>
+        {/* Row 2 — tagline */}
+        <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "0.92rem", color: "rgba(255,255,255,0.38)", lineHeight: 1.85, maxWidth: 560, paddingTop: 20, paddingBottom: 20, borderBottom: "0.5px solid rgba(255,255,255,0.07)" }}>
+          Our experiences, ideas, and stories can help shape resources that feel real, relevant, and useful for rangatahi across Aotearoa. Your voice matters. Help shape what's next.
         </p>
 
-        {/* Divider */}
-        <div style={{ height: 1, background: "rgba(255,255,255,0.05)", marginBottom: 20 }} />
+        {/* Row 3 — ethics */}
+        <p style={{ fontFamily: "Georgia, serif", fontSize: "0.72rem", color: "rgba(255,255,255,0.22)", lineHeight: 1.9, paddingTop: 16, paddingBottom: 16, borderBottom: "0.5px solid rgba(255,255,255,0.05)" }}>
+          Approved by the University of Auckland Human Participants Ethics Committee on [date] for three years. Reference Number [number]. For any concerns regarding ethical issues, you may contact The University of Auckland Human Participants Ethics Committee/Auckland Health Research Ethics Committee:{" "}
+          <a href="mailto:humanethics@auckland.ac.nz" style={{ color: "rgba(255,255,255,0.35)", textDecoration: "underline" }}>humanethics@auckland.ac.nz</a>
+        </p>
 
-        {/* Copyright row */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-          <p style={{ fontFamily: "Georgia, serif", fontSize: "0.72rem", color: "rgba(255,255,255,0.2)" }}>© 2026 Ngā Piki me Ngā Heke.</p>
-          <p style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "0.68rem", color: "rgba(255,255,255,0.15)" }}>Ngā mihi ki ngā tangata whenua o te rohe nei</p>
+        {/* Row 4 — copyright */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8, paddingTop: 14 }}>
+          <span style={{ fontFamily: "Georgia, serif", fontSize: "0.72rem", color: "rgba(255,255,255,0.18)" }}>© 2026 Ngā Piki me Ngā Heke.</span>
+          <span style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "0.68rem", color: "rgba(255,255,255,0.12)" }}>Ngā mihi ki ngā tangata whenua o te rohe nei</span>
         </div>
 
       </div>
@@ -474,7 +461,7 @@ function AboutPage({ setView, onPortal = () => {} }) {
     <div style={{ paddingTop: 67 }}>
       {/* Hero */}
       <div style={{ background: `linear-gradient(135deg, ${b.purpleDark}, ${b.purple})`, padding: "60px 24px 70px", position: "relative", overflow: "hidden" }}>
-        <RainbowBar />
+
         <svg style={{ position: "absolute", right: -30, bottom: -20, opacity: 0.07, pointerEvents: "none" }} width="280" height="200" viewBox="0 0 280 200" fill="none">
           <polygon points="0,80 120,20 240,80 210,80 120,36 30,80" fill="white" />
           <polygon points="40,130 160,70 280,130 250,130 160,86 70,130" fill="white" />
@@ -542,7 +529,7 @@ function ContactPage({ setView, onPortal = () => {} }) {
   return (
     <div style={{ paddingTop: 67 }}>
       <div style={{ background: `linear-gradient(135deg, ${b.tealDark}, ${b.teal})`, padding: "60px 24px 70px", position: "relative", overflow: "hidden" }}>
-        <RainbowBar />
+
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <SectionLabel color="rgba(255,255,255,0.5)">Get in Touch</SectionLabel>
           <h1 style={{ fontFamily: "'Arial Black', sans-serif", fontSize: "clamp(2rem,5vw,3rem)", color: b.white, fontWeight: 900, lineHeight: 1.05 }}>Contact Us</h1>
@@ -633,7 +620,7 @@ function SupportPage({ setView, onPortal = () => {} }) {
   return (
     <div style={{ paddingTop: 67 }}>
       <div style={{ background: `linear-gradient(135deg, ${b.ink}, #1a2e1a)`, padding: "60px 24px 70px", position: "relative", overflow: "hidden" }}>
-        <RainbowBar />
+
         <svg style={{ position: "absolute", right: -30, top: 0, opacity: 0.06, pointerEvents: "none" }} width="280" height="220" viewBox="0 0 280 220" fill="none">
           <polygon points="0,80 120,20 240,80 210,80 120,36 30,80" fill={b.teal} />
           <polygon points="40,140 160,80 280,140 250,140 160,96 70,140" fill={b.teal} />
